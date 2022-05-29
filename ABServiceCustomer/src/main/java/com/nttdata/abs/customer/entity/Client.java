@@ -29,5 +29,6 @@ public class Client implements Serializable {
 	private String address;
 	private String email;
 	private String state;
+	private String type;
 	
 }

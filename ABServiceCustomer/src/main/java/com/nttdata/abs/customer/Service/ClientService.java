@@ -1,4 +1,4 @@
-package com.nttdata.abs.customer.Service;
+package com.nttdata.abs.customer.service;
 
 import java.util.List;
 

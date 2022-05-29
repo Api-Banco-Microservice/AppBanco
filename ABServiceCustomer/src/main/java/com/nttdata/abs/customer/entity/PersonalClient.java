@@ -14,5 +14,8 @@ public class PersonalClient extends Client {
 	private String dni;
 	private String age;
 	private String nroAccount;
+	private boolean savingsAccount;
+	private boolean fixedTermAccount;
+	private boolean currentAccount;
 	
 }

@@ -1,10 +1,10 @@
-package com.nttdata.abs.customer.Service.Impl;
+package com.nttdata.abs.customer.service.Impl;
 
 import java.util.List;
 
-import com.nttdata.abs.customer.Service.ClientService;
 import com.nttdata.abs.customer.entity.Client;
 import com.nttdata.abs.customer.repository.ClientRepository;
+import com.nttdata.abs.customer.service.ClientService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -13,7 +13,7 @@ import org.springframework.stereotype.Service;
 public class ClientServiceImpl implements ClientService {
 
     @Autowired
-    ClientRepository repository;
+    private ClientRepository repository;
 
     @Override
     public List<Client> findAll() {

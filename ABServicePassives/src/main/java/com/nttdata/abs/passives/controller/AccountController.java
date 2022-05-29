@@ -1,7 +1,4 @@
-package com.nttdata.abs.customer.controller;
-
-import com.nttdata.abs.customer.entity.Client;
-import com.nttdata.abs.customer.service.ClientService;
+package com.nttdata.abs.passives.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -13,32 +10,36 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.nttdata.abs.passives.entity.Account;
+import com.nttdata.abs.passives.service.AccountService;
+
 @RestController
-@RequestMapping("/client")
+@RequestMapping("/account")
 @CrossOrigin(origins = "http://localhost:4200")
-public class ClientController {
-    
-    @Autowired
-    private ClientService service;
+public class AccountController {
+
+	@Autowired
+	private AccountService service;
+	
 
     @GetMapping("/findAll")
-    public String findAllClient(){
+    public String findAllAccounts(){
         return null;
     }
 
     @GetMapping("/{id}")
-    public String findById(@PathVariable("id") Long id) {
+    public String findById(@PathVariable("id") String id) {
         return null;
     }
 
     @PostMapping("/create")
-    public String createClient(@RequestBody Client client) {
+    public String createAccount(@RequestBody Account account) {
         return null;
     }
 
     @PutMapping("/update/{id}")
-    public String updateClient(@PathVariable("id") Long id, @RequestBody Client client) {
+    public String updateAccount(@PathVariable("id") String id, @RequestBody Account account) {
         return null;
     }
-
+	
 }
