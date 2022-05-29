@@ -8,7 +8,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
-public class BussinessClient extends Client {
+public class BussinessClient extends Customer {
 	
 	private String ruc;
 	

@@ -8,7 +8,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
-public class PersonalClient extends Client {
+public class PersonalClient extends Customer {
 
 	private String lastname;
 	private String dni;
