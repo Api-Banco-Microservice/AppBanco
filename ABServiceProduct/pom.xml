@@ -8,11 +8,11 @@
 		<version>2.7.0</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.nttdata.abs.passives</groupId>
-	<artifactId>ABServicePassives</artifactId>
+	<groupId>com.nttdata.abs.product</groupId>
+	<artifactId>ABServiceProduct</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>ABServicePassives</name>
-	<description>Demo project for Spring Boot Passives</description>
+	<name>ABServiceProduct</name>
+	<description>Demo project for Spring Boot Product</description>
 	<properties>
 		<java.version>11</java.version>
 		<spring-cloud.version>2021.0.3-SNAPSHOT</spring-cloud.version>

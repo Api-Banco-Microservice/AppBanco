@@ -1,4 +1,4 @@
-package com.nttdata.abs.passives.entity;
+package com.nttdata.abs.product.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;

@@ -1,4 +1,4 @@
-package com.nttdata.abs.passives.controller;
+package com.nttdata.abs.product.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.nttdata.abs.passives.entity.Account;
-import com.nttdata.abs.passives.service.AccountService;
+import com.nttdata.abs.product.entity.Account;
+import com.nttdata.abs.product.service.AccountService;
 
 @RestController
 @RequestMapping("/account")

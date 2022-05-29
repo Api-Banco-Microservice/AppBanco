@@ -1,13 +1,13 @@
-package com.nttdata.abs.passives;
+package com.nttdata.abs.product;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class AbServicePassivesApplication {
+public class AbServiceProductApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(AbServicePassivesApplication.class, args);
+		SpringApplication.run(AbServiceProductApplication.class, args);
 	}
 
 }

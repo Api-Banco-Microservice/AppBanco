@@ -1,13 +1,13 @@
-package com.nttdata.abs.passives.service.impl;
+package com.nttdata.abs.product.service.impl;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.nttdata.abs.passives.entity.Account;
-import com.nttdata.abs.passives.repository.AccountRepository;
-import com.nttdata.abs.passives.service.AccountService;
+import com.nttdata.abs.product.entity.Account;
+import com.nttdata.abs.product.repository.AccountRepository;
+import com.nttdata.abs.product.service.AccountService;
 
 @Service
 public class AccountServiceImpl implements AccountService {
