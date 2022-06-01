@@ -1,8 +1,5 @@
 package com.nttdata.abs.customer.controller;
 
-import com.nttdata.abs.customer.entity.Client;
-import com.nttdata.abs.customer.service.ClientService;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,13 +10,16 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.nttdata.abs.customer.Service.CustomerService;
+import com.nttdata.abs.customer.entity.Customer;
+
 @RestController
-@RequestMapping("/client")
+@RequestMapping("/customers")
 @CrossOrigin(origins = "http://localhost:4200")
-public class ClientController {
+public class CustomerController {
     
     @Autowired
-    private ClientService service;
+    private CustomerService service;
 
     @GetMapping("/findAll")
     public String findAllClient(){
@@ -32,12 +32,12 @@ public class ClientController {
     }
 
     @PostMapping("/create")
-    public String createClient(@RequestBody Client client) {
+    public String createClient(@RequestBody Customer client) {
         return null;
     }
 
     @PutMapping("/update/{id}")
-    public String updateClient(@PathVariable("id") Long id, @RequestBody Client client) {
+    public String updateClient(@PathVariable("id") Long id, @RequestBody Customer client) {
         return null;
     }
 

@@ -1,40 +1,40 @@
-package com.nttdata.abs.customer.service.Impl;
+package com.nttdata.abs.customer.Service.Impl;
 
 import java.util.List;
 
-import com.nttdata.abs.customer.entity.Client;
-import com.nttdata.abs.customer.repository.ClientRepository;
-import com.nttdata.abs.customer.service.ClientService;
+import com.nttdata.abs.customer.entity.Customer;
+import com.nttdata.abs.customer.repository.CustomerRepository;
+import com.nttdata.abs.customer.Service.CustomerService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class ClientServiceImpl implements ClientService {
+public class CustomerServiceImpl implements CustomerService {
 
     @Autowired
-    private ClientRepository repository;
+    private CustomerRepository repository;
 
     @Override
-    public List<Client> findAll() {
+    public List<Customer> findAll() {
         // TODO Auto-generated method stub
         return null;
     }
 
     @Override
-    public Client findById(Long id) {
+    public Customer findById(Long id) {
         // TODO Auto-generated method stub
         return null;
     }
 
     @Override
-    public Client createClient(Client client) {
+    public Customer createClient(Customer client) {
         // TODO Auto-generated method stub
         return null;
     }
 
     @Override
-    public Client updateClient(Client client) {
+    public Customer updateClient(Customer client) {
         // TODO Auto-generated method stub
         return null;
     }

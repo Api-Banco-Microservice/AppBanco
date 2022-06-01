@@ -19,7 +19,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @Entity
 @Table(name = "clients")
-public class Client implements Serializable {
+public class Customer implements Serializable {
 	
 	@Id
 	@GeneratedValue
