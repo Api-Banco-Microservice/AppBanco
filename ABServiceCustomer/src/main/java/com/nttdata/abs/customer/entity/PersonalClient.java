@@ -10,6 +10,7 @@ import lombok.Setter;
 @Entity
 public class PersonalClient extends Customer {
 
+	private static final long serialVersionUID = 1L;
 	private String lastname;
 	private String dni;
 	private String age;

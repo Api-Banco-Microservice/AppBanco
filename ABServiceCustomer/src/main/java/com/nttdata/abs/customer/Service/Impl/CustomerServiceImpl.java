@@ -2,47 +2,58 @@ package com.nttdata.abs.customer.Service.Impl;
 
 import java.util.List;
 
-import com.nttdata.abs.customer.entity.Customer;
-import com.nttdata.abs.customer.repository.CustomerRepository;
-import com.nttdata.abs.customer.Service.CustomerService;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.nttdata.abs.customer.Service.CustomerService;
+import com.nttdata.abs.customer.entity.Customer;
+import com.nttdata.abs.customer.repository.CustomerRepository;
 
 @Service
 public class CustomerServiceImpl implements CustomerService {
 
     @Autowired
-    private CustomerRepository repository;
+    private CustomerRepository customerRepository;
 
     @Override
+    @Transactional(readOnly = true)
     public List<Customer> findAll() {
-        // TODO Auto-generated method stub
-        return null;
+       return (List<Customer>) customerRepository.findAll();
+    	
     }
 
     @Override
     public Customer findById(Long id) {
-        // TODO Auto-generated method stub
-        return null;
+        return customerRepository.findById(id).orElse(null);
     }
 
-    @Override
-    public Customer createClient(Customer client) {
-        // TODO Auto-generated method stub
-        return null;
-    }
+	@Override
+	@Transactional
+	public Customer save(Customer customer) {
+		return customerRepository.save(customer);
+	}
 
-    @Override
-    public Customer updateClient(Customer client) {
-        // TODO Auto-generated method stub
-        return null;
-    }
+	@Override
+	public Customer update(Customer customer, Long id) {
+		Customer customerDB = this.findById(customer.getId());
+		if(customerDB==null) {
+			return null;
+		}
+		customerDB.setName(customer.getName());
+		customerDB.setAddress(customer.getAddress());
+		customerDB.setEmail(customer.getEmail());
+		customerDB.setState(customer.getState());
+		customerDB.setType(customer.getType());
+		
+		return customerRepository.save(customerDB);
+	}
 
-    @Override
-    public void deleteClient(Long id) {
-        // TODO Auto-generated method stub
-        
-    }
+	@Override
+	@Transactional
+	public void delete(Long id) {
+		customerRepository.deleteById(id);
+		
+	}
     
 }
