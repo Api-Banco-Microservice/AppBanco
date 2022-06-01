@@ -13,40 +13,40 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.nttdata.abs.customer.Service.CustomerService;
-import com.nttdata.abs.customer.entity.Customer;
+import com.nttdata.abs.customer.Service.PersonalCustomerService;
+import com.nttdata.abs.customer.entity.PersonalCustomer;
 
 @RestController
-@RequestMapping("/customers")
+@RequestMapping("/personalCustomers")
 @CrossOrigin(origins = "http://localhost:4200")
-public class CustomerController {
+public class PersonalCustomerController {
 
 	@Autowired
-	private CustomerService customerService;
+	private PersonalCustomerService personalCustomerService;
 
 	@GetMapping("/findAll")
-	public List<Customer> findAllClient() {
-		return customerService.findAll();
+	public List<PersonalCustomer> findAllClient() {
+		return personalCustomerService.findAll();
 	}
 
 	@GetMapping("/view/{id}")
-	public Customer findById(@PathVariable("id") Long id) {
-		return customerService.findById(id);
+	public PersonalCustomer findById(@PathVariable("id") Long id) {
+		return personalCustomerService.findById(id);
 	}
 
 	@PostMapping("/create")
-	public Customer save(@RequestBody Customer client) {
-		return customerService.save(client);
+	public PersonalCustomer save(@RequestBody PersonalCustomer personalCustomer) {
+		return personalCustomerService.save(personalCustomer);
 	}
 
 	@PutMapping("/update/{id}")
-	public Customer update(@PathVariable("id") Long id, @RequestBody Customer client) {
-		return customerService.update(client, id);
+	public PersonalCustomer update(@PathVariable("id") Long id, @RequestBody PersonalCustomer personalCustomer) {
+		return personalCustomerService.update(personalCustomer, id);
 	}
 
 	@DeleteMapping("/delete/{id}")
 	public void delete(@PathVariable Long id) {
-		customerService.delete(id);
+		personalCustomerService.delete(id);
 	}
 
 }
