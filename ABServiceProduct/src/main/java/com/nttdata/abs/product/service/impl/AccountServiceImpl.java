@@ -13,7 +13,7 @@ import com.nttdata.abs.product.repository.AccountRepository;
 import com.nttdata.abs.product.service.AccountService;
 
 @Service
-public abstract class AccountServiceImpl implements AccountService {
+public class AccountServiceImpl implements AccountService {
 
 	@Autowired
 	private AccountRepository repository;
@@ -22,14 +22,14 @@ public abstract class AccountServiceImpl implements AccountService {
 	public List<Account> findAll() {
 		// TODO Auto-generated method stub
 		List<Account> returnList = new ArrayList<>();
-		getAccount().findAll().forEach(obj -> returnList.add(obj));
+		repository.findAll().forEach(obj -> returnList.add(obj));
 		return null;
 	}
 
 	@Override
 	public Account findById(String id) {
 		// TODO Auto-generated method stub
-		Optional<Account> obj = getAccount().findById(id);
+		Optional<Account> obj = repository.findById(id);
 		if(obj.isPresent()) {
 			return obj.get();
 		}
@@ -39,20 +39,19 @@ public abstract class AccountServiceImpl implements AccountService {
 	@Override
 	public Account createClient(Account account) {
 		// TODO Auto-generated method stub
-		return getAccount().save(account);
+		return repository.save(account);
 	}
 
 	@Override
 	public Account updateClient(Account account) {
 		// TODO Auto-generated method stub
-		return getAccount().save(account);
+		return repository.save(account);
 	}
 
 	@Override
 	public void deleteClient(String id) {
 		// TODO Auto-generated method stub
-		getAccount().deleteById(id);
+		repository.deleteById(id);
 	}
-	public abstract CrudRepository<Account, String> getAccount();
 
 }

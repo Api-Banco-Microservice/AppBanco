@@ -6,7 +6,6 @@ import org.springframework.stereotype.Repository;
 
 import com.nttdata.abs.product.entity.Account;
 
-@Repository
 public interface AccountService {
 
     public abstract List<Account> findAll();
