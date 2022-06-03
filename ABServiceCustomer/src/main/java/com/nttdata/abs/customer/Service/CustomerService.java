@@ -6,10 +6,10 @@ import com.nttdata.abs.customer.entity.Customer;
 
 public interface CustomerService {
 
-    List<Customer> findAll();
-    Customer findById(Long id);
-    Customer save(Customer customer);
-    Customer update(Customer customer, Long id);
-    void delete(Long id);
+	public List<Customer> findAll();
+    public Customer findById(Long id);
+    public Customer save(Customer customer);
+    public Customer update(Customer customer, Long id);
+    public void delete(Long id);
     
 }
