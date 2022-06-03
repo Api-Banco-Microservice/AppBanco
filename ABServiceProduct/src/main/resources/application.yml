@@ -3,7 +3,7 @@ server:
 
 spring:
   application:
-    name: product-transaction
+    name: service-product
   h2:
     console:
       enabled: true
