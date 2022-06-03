@@ -1,0 +1,1 @@
+INSERT INTO accounts (nroClient, amount, type, stateDebt, nroTransactions, maintenance, movementLimit) VALUES ('45698', '600','Tipo-aqui', 'start', '10', 'true', '15');

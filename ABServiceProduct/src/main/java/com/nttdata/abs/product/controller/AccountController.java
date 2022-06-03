@@ -18,15 +18,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.nttdata.abs.product.entity.Account;
-import com.nttdata.abs.product.service.AccountService;
+import com.nttdata.abs.product.models.entity.Account;
+import com.nttdata.abs.product.models.service.AccountService;
 
 @RestController
 @RequestMapping("/account")
 @CrossOrigin(origins = "http://localhost:4200")
 public class AccountController {
 
-	@Autowired
+	@Autowired(required=false)
 	private AccountService service;
 	
 
@@ -50,7 +50,7 @@ public class AccountController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Map<String, Object>> findById(@PathVariable("id") String id) {
+    public ResponseEntity<Map<String, Object>> findById(@PathVariable("id") Integer id) {
     	Map<String, Object> result = new HashMap<>();
 
 		try {
@@ -85,7 +85,7 @@ public class AccountController {
     }
 
     @PutMapping("/update/{id}")
-    public ResponseEntity<Map<String, Object>> updateAccount(@PathVariable("id") String id, @RequestBody Account account) {
+    public ResponseEntity<Map<String, Object>> updateAccount(@PathVariable("id") Integer id, @RequestBody Account account) {
     	Map<String, Object> result = new HashMap<>();
 
         try {
@@ -100,6 +100,11 @@ public class AccountController {
 			e.printStackTrace();
         }
 		return ResponseEntity.ok(result);
+    }
+    
+    @GetMapping("find/{id}")
+    public Account findById_2(@PathVariable("id") Integer id) {
+    	return service.findById(id);
     }
 	
 }

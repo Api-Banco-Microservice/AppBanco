@@ -1,4 +1,4 @@
-package com.nttdata.abs.product.service.impl;
+package com.nttdata.abs.product.models.service.impl;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,9 +8,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Service;
 
-import com.nttdata.abs.product.entity.Account;
-import com.nttdata.abs.product.repository.AccountRepository;
-import com.nttdata.abs.product.service.AccountService;
+import com.nttdata.abs.product.models.entity.Account;
+import com.nttdata.abs.product.models.repository.AccountRepository;
+import com.nttdata.abs.product.models.service.AccountService;
 
 @Service
 public abstract class AccountServiceImpl implements AccountService {
@@ -27,9 +27,9 @@ public abstract class AccountServiceImpl implements AccountService {
 	}
 
 	@Override
-	public Account findById(String id) {
+	public Account findById(Integer id) {
 		// TODO Auto-generated method stub
-		Optional<Account> obj = getAccount().findById(id);
+		Optional<Account> obj = getAccount().findById(id.toString());
 		if(obj.isPresent()) {
 			return obj.get();
 		}
