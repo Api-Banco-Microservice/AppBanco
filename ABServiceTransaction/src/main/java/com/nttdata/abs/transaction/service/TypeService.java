@@ -7,6 +7,6 @@ import com.nttdata.abs.transaction.entity.Type;
 public interface TypeService {
 
     public abstract List<Type> findAll();
-    public abstract Type findById(Long id);
+    public abstract Type findById(int id);
     
 }

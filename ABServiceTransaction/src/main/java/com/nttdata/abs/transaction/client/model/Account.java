@@ -1,10 +1,4 @@
-package com.nttdata.abs.product.entity;
-
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+package com.nttdata.abs.transaction.client.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -15,12 +9,8 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity
-@Table(name = "accounts")
 public class Account {
-	
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+
 	private int number;
 	private String nroclient;
 	private double amount;

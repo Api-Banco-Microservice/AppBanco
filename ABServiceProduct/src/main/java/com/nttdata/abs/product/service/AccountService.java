@@ -7,9 +7,9 @@ import com.nttdata.abs.product.entity.Account;
 public interface AccountService {
 
     public abstract List<Account> findAll();
-    public abstract Account findById(Integer id);
+    public abstract Account findById(int id);
     public abstract Account createClient(Account account);
     public abstract Account updateClient(Account account);
-    public abstract void deleteClient(String id);
+    public abstract void deleteClient(int id);
 
 }

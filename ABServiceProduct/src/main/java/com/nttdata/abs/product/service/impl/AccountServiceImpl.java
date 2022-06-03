@@ -26,7 +26,7 @@ public class AccountServiceImpl implements AccountService {
 	}
 
 	@Override
-	public Account findById(Integer id) {
+	public Account findById(int id) {
 		// TODO Auto-generated method stub
 		Optional<Account> obj = repository.findById(id);
 		if(obj.isPresent()) {
@@ -48,7 +48,7 @@ public class AccountServiceImpl implements AccountService {
 	}
 
 	@Override
-	public void deleteClient(String id) {
+	public void deleteClient(int id) {
 		// TODO Auto-generated method stub
 		repository.deleteById(id);
 	}
