@@ -19,7 +19,7 @@ import com.nttdata.abs.product.service.AccountService;
 public class AccountController {
 
 	@Autowired
-	private AccountService service;
+	private AccountService accountService;
 	
 
     @GetMapping("/findAll")

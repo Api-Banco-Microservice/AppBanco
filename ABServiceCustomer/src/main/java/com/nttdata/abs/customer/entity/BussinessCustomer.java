@@ -8,8 +8,9 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
-public class BussinessClient extends Customer {
+public class BussinessCustomer extends Customer {
 	
+	private static final long serialVersionUID = 1L;
 	private String ruc;
 	
 }
