@@ -8,11 +8,11 @@
 		<version>2.7.0</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.nttdata.abs.customer</groupId>
-	<artifactId>ABServiceCustomer</artifactId>
+	<groupId>com.nttdata.abs.transaction</groupId>
+	<artifactId>ABServiceTransaction</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>ABServiceCustomer</name>
-	<description>Demo project for Spring Boot Customer</description>
+	<name>ABServiceTransaction</name>
+	<description>Demo project for Spring Boot Transaction</description>
 	<properties>
 		<java.version>11</java.version>
 		<spring-cloud.version>2021.0.3-SNAPSHOT</spring-cloud.version>
@@ -26,10 +26,10 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
-		<!-- <dependency>
+		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
-		</dependency>-->
+		</dependency>
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
