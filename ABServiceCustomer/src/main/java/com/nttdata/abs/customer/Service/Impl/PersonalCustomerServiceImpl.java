@@ -37,16 +37,21 @@ public class PersonalCustomerServiceImpl implements PersonalCustomerService {
 	@Override
 	public PersonalCustomer update(PersonalCustomer personalCustomer, Long id) {
 		PersonalCustomer personalCustomerDB = this.findById(personalCustomer.getId());
-		if(personalCustomer==null) {
-			return null;
+		if(personalCustomer!=null) {
+			personalCustomerDB.setName(personalCustomer.getName());
+			personalCustomerDB.setAddress(personalCustomer.getAddress());
+			personalCustomerDB.setEmail(personalCustomer.getEmail());
+			personalCustomerDB.setState(personalCustomer.getState());
+			personalCustomerDB.setType(personalCustomer.getType());
+			
+			personalCustomerDB.setLastname(personalCustomer.getLastname());
+			personalCustomerDB.setDni(personalCustomer.getDni());
+			personalCustomerDB.setAge(personalCustomer.getAge());
+			personalCustomerDB.setNroAccount(personalCustomer.getNroAccount());
+			personalCustomerDB.setSavingsAccount(personalCustomer.isSavingsAccount());
+			personalCustomerDB.setFixedTermAccount(personalCustomer.isFixedTermAccount());
+			personalCustomerDB.setCurrentAccount(personalCustomer.isCurrentAccount());	
 		}
-		personalCustomerDB.setLastname(personalCustomer.getLastname());
-		personalCustomerDB.setDni(personalCustomer.getDni());
-		personalCustomerDB.setAge(personalCustomer.getAge());
-		personalCustomerDB.setNroAccount(personalCustomer.getNroAccount());
-		personalCustomerDB.setSavingsAccount(personalCustomer.isSavingsAccount());
-		personalCustomerDB.setFixedTermAccount(personalCustomer.isFixedTermAccount());
-		personalCustomerDB.setCurrentAccount(personalCustomer.isCurrentAccount());
 		
 		return personalCustomerRepository.save(personalCustomerDB);
 	}
