@@ -24,6 +24,7 @@ public class CustomerServiceImpl implements CustomerService {
     }
 
     @Override
+    @Transactional(readOnly = true)
     public Customer findById(Long id) {
         return customerRepository.findById(id).orElse(null);
     }
