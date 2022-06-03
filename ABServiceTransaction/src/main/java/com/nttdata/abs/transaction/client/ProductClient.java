@@ -7,11 +7,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.nttdata.abs.transaction.client.model.Account;
 
-//@FeignClient(name = "SERVICE-PRODUCT")
-//@RequestMapping("/account")
+@FeignClient(name = "SERVICE-PRODUCT")
 public interface ProductClient {
 
-//    @GetMapping("/{id}")
-//    public Account findById(@PathVariable("id") String id);
+	@GetMapping("/account/find/{id}")
+    public Account findById_2(@PathVariable("id") int id);
 
 }

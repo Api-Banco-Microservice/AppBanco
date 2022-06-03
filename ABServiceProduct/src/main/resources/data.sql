@@ -1,0 +1,7 @@
+INSERT INTO accounts (number, nroclient, amount, type, statedebt, nrotransactions, maintenance, movementlimit) VALUES (1, '74586582', 4500, 'Ahorro', true, 5, 5.5, 0);
+INSERT INTO accounts (number, nroclient, amount, type, statedebt, nrotransactions, maintenance, movementlimit) VALUES (2, '95846214', 1000, 'Cuenta corriente', false, 18, 0, 0);
+INSERT INTO accounts (number, nroclient, amount, type, statedebt, nrotransactions, maintenance, movementlimit) VALUES (3, '8457951588795', 4500, 'Plazo fijo', false, 3, 2.1, 0);
+INSERT INTO accounts (number, nroclient, amount, type, statedebt, nrotransactions, maintenance, movementlimit) VALUES (4, '65814958', 5000, 'Cuenta corriente', true, 8, 1.5, 0);
+INSERT INTO accounts (number, nroclient, amount, type, statedebt, nrotransactions, maintenance, movementlimit) VALUES (5, '6521748951258', 2500, 'Ahorro', true, 15, 1.0, 0);
+INSERT INTO accounts (number, nroclient, amount, type, statedebt, nrotransactions, maintenance, movementlimit) VALUES (6, '4759425814586', 10000, 'Ahorro', false, 0, 3.1, 0);
+INSERT INTO accounts (number, nroclient, amount, type, statedebt, nrotransactions, maintenance, movementlimit) VALUES (7, '85963245', 3500, 'Plazo fijo', true, 10, 5.0, 0);

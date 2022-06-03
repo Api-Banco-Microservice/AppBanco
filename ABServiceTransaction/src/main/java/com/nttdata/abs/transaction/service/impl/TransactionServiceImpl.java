@@ -1,13 +1,16 @@
 package com.nttdata.abs.transaction.service.impl;
 
 import java.util.List;
+import java.util.Optional;
 
 import com.nttdata.abs.transaction.client.ProductClient;
+import com.nttdata.abs.transaction.client.model.Account;
 import com.nttdata.abs.transaction.entity.Transaction;
 import com.nttdata.abs.transaction.repository.TransactionRepository;
 import com.nttdata.abs.transaction.service.TransactionService;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -16,8 +19,8 @@ public class TransactionServiceImpl implements TransactionService {
     @Autowired
     private TransactionRepository repository;
 
-//    @Autowired
-//    private ProductClient productClient;
+    @Autowired
+    private ProductClient productClient;
 
     @Override
     public List<Transaction> findAll() {
@@ -26,7 +29,7 @@ public class TransactionServiceImpl implements TransactionService {
 
     @Override
     public Transaction findById(Long id) {
-        return repository.findById(id).orElse(null);
+        return feignFindById(id);
     }
 
     @Override
@@ -57,5 +60,20 @@ public class TransactionServiceImpl implements TransactionService {
 			break;
 		}
 	}
-        
+
+	@Override
+	public Transaction feignFindById(Long id) {
+		Optional<Transaction> transactionOptional = repository.findById(id);
+		
+		if (transactionOptional.isPresent()) {
+			Transaction transaction = transactionOptional.get();
+			
+			Account account = productClient.findById_2(transaction.getAccount());
+			Account acc = Optional.ofNullable(account).orElse(new Account());
+			transaction.setAccount_main(acc);
+			
+			return transaction;
+		}				
+		return null;
+	}        
 }

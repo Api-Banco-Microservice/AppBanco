@@ -14,8 +14,10 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.persistence.Transient;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.nttdata.abs.transaction.client.model.Account;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -40,7 +42,10 @@ public class Transaction implements Serializable {
 	private String number;
 
 	//Pendiente a enlazar con los otros servicios
-	private Long account;
+	private int account;
+	
+	@Transient
+	private Account account_main;
 
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "type_id")

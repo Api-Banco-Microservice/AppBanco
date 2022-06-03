@@ -10,14 +10,14 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Account {
-	
-	private String number;
-	private String nroClient;
-	private String amount;
+
+	private int number;
+	private String nroclient;
+	private double amount;
 	private String type;
-	private String stateDebt;
-	private String nroTransactions;
-	private String maintenance;
-	private String movementLimit;
+	private boolean statedebt;
+	private int nrotransactions;
+	private double maintenance;
+	private int movementlimit;
     
 }

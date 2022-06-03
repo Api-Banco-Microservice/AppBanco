@@ -27,7 +27,7 @@ import com.nttdata.abs.product.service.AccountService;
 public class AccountController {
 
 	@Autowired
-	private AccountService accountService;
+	private AccountService service;
 	
 
     @GetMapping("/findAll")
@@ -50,7 +50,7 @@ public class AccountController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Map<String, Object>> findById(@PathVariable("id") String id) {
+    public ResponseEntity<Map<String, Object>> findById(@PathVariable("id") int id) {
     	Map<String, Object> result = new HashMap<>();
 
 		try {
@@ -85,7 +85,7 @@ public class AccountController {
     }
 
     @PutMapping("/update/{id}")
-    public ResponseEntity<Map<String, Object>> updateAccount(@PathVariable("id") String id, @RequestBody Account account) {
+    public ResponseEntity<Map<String, Object>> updateAccount(@PathVariable("id") int id, @RequestBody Account account) {
     	Map<String, Object> result = new HashMap<>();
 
         try {
@@ -101,8 +101,8 @@ public class AccountController {
         }
 		return ResponseEntity.ok(result);
     }
-    @GetMapping("find/{id}")
-    public Account findById_2(@PathVariable("id") Integer id) {
+    @GetMapping("/find/{id}")
+    public Account findById_2(@PathVariable("id") int id) {
     	return service.findById(id);
     }
 }

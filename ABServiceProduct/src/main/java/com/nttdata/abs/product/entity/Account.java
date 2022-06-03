@@ -22,12 +22,12 @@ public class Account {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int number;
-	private String nroClient;
-	private String amount;
+	private String nroclient;
+	private double amount;
 	private String type;
-	private String stateDebt;
-	private String nroTransactions;
-	private String maintenance;
-	private String movementLimit;
+	private boolean statedebt;
+	private int nrotransactions;
+	private double maintenance;
+	private int movementlimit;
     
 }

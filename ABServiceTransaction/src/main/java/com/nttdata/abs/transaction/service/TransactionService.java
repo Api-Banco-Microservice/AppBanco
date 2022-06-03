@@ -12,5 +12,6 @@ public interface TransactionService {
     public abstract Transaction updateTransaction(Transaction transaction);
     public abstract void deleteTransaction(Long id);
     public abstract void actionForTransaction(int idType, double amount);
+    public abstract Transaction feignFindById(Long id);
     
 }
