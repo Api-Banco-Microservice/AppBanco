@@ -21,7 +21,7 @@ public class TypeServiceImpl implements TypeService {
     }
 
     @Override
-    public Type findById(Long id) {
+    public Type findById(int id) {
         return repository.findById(id).orElse(null);
     }
     

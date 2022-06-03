@@ -47,6 +47,9 @@ public class Transaction implements Serializable {
 	@JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
 	private Type type;
 	
+	@Column(name = "amount", nullable = false)
+	private double amount;
+	
 	@Temporal(TemporalType.TIMESTAMP)
 	@Column(name = "date_register")
 	private Date dateRegister;

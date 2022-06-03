@@ -43,7 +43,7 @@ public class TypeController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Map<String, Object>> findById(@PathVariable("id") Long id) {
+    public ResponseEntity<Map<String, Object>> findById(@PathVariable("id") int id) {
 
         Map<String, Object> result = new HashMap<>();
 
