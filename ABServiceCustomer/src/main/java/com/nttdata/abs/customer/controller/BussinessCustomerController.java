@@ -3,6 +3,7 @@ package com.nttdata.abs.customer.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,7 +16,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.nttdata.abs.customer.Service.BussinessCustomerService;
 import com.nttdata.abs.customer.entity.BussinessCustomer;
-import com.nttdata.abs.customer.entity.Customer;
 
 @RestController
 @RequestMapping("/bussinessCustomers")
@@ -30,22 +30,22 @@ public class BussinessCustomerController {
 		return bussinessCustomerService.findAll();
 	}
 
-	@GetMapping("/view/{id}")
+	@GetMapping(value = "/view/{id}", produces = { MediaType.APPLICATION_JSON_VALUE })
 	public BussinessCustomer findById(@PathVariable("id") Long id) {
 		return bussinessCustomerService.findById(id);
 	}
 
-	@PostMapping("/create")
+	@PostMapping(value = "/create", produces = { MediaType.APPLICATION_JSON_VALUE })
 	public BussinessCustomer save(@RequestBody BussinessCustomer bussunessCustomer) {
 		return bussinessCustomerService.save(bussunessCustomer);
 	}
 
-	@PutMapping("/update/{id}")
+	@PutMapping(value = "/update/{id}", produces = { MediaType.APPLICATION_JSON_VALUE })
 	public BussinessCustomer update(@PathVariable("id") Long id, @RequestBody BussinessCustomer bussinessCustomer) {
 		return bussinessCustomerService.update(bussinessCustomer, id);
 	}
 
-	@DeleteMapping("/delete/{id}")
+	@DeleteMapping(value = "/delete/{id}", produces = { MediaType.APPLICATION_JSON_VALUE })
 	public void delete(@PathVariable Long id) {
 		bussinessCustomerService.delete(id);
 	}
