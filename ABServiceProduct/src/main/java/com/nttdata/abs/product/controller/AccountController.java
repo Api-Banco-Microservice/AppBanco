@@ -101,5 +101,8 @@ public class AccountController {
         }
 		return ResponseEntity.ok(result);
     }
-	
+    @GetMapping("find/{id}")
+    public Account findById_2(@PathVariable("id") Integer id) {
+    	return service.findById(id);
+    }
 }

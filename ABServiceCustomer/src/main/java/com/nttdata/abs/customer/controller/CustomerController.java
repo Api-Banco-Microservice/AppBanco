@@ -3,6 +3,7 @@ package com.nttdata.abs.customer.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -24,27 +25,27 @@ public class CustomerController {
 	@Autowired
 	private CustomerService customerService;
 
-	@GetMapping("/findAll")
+	@GetMapping(value = "/findAll", produces = {MediaType.APPLICATION_JSON_VALUE})
 	public List<Customer> findAllClient() {
 		return customerService.findAll();
 	}
 
-	@GetMapping("/view/{id}")
+	@GetMapping(value ="/view/{id}", produces = {MediaType.APPLICATION_JSON_VALUE})
 	public Customer findById(@PathVariable("id") Long id) {
 		return customerService.findById(id);
 	}
 
-	@PostMapping("/create")
+	@PostMapping(value = "/create", produces = {MediaType.APPLICATION_JSON_VALUE})
 	public Customer save(@RequestBody Customer client) {
 		return customerService.save(client);
 	}
 
-	@PutMapping("/update/{id}")
+	@PutMapping(value = "/update/{id}", produces = {MediaType.APPLICATION_JSON_VALUE})
 	public Customer update(@PathVariable("id") Long id, @RequestBody Customer client) {
 		return customerService.update(client, id);
 	}
 
-	@DeleteMapping("/delete/{id}")
+	@DeleteMapping(value = "/delete/{id}",produces = {MediaType.APPLICATION_JSON_VALUE})
 	public void delete(@PathVariable Long id) {
 		customerService.delete(id);
 	}
