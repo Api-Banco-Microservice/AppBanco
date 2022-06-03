@@ -8,7 +8,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
-@Entity(name = "bussinessCustomers")
+@Entity(name = "bussiness_customers")
 @PrimaryKeyJoinColumn(name = "bussiness_customer")
 public class BussinessCustomer extends Customer {
 	
