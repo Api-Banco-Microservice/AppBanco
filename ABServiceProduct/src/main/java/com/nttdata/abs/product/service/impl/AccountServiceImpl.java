@@ -26,7 +26,7 @@ public class AccountServiceImpl implements AccountService {
 	}
 
 	@Override
-	public Account findById(String id) {
+	public Account findById(Integer id) {
 		// TODO Auto-generated method stub
 		Optional<Account> obj = repository.findById(id);
 		if(obj.isPresent()) {
