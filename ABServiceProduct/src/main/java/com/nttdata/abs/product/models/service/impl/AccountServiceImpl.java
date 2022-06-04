@@ -23,7 +23,7 @@ public class AccountServiceImpl implements AccountService {
 		// TODO Auto-generated method stub
 		List<Account> returnList = new ArrayList<>();
 		repository.findAll().forEach(obj -> returnList.add(obj));
-		return null;
+		return returnList;
 	}
 
 	@Override
