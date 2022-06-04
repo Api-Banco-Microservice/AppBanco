@@ -1,0 +1,39 @@
+server:
+  port: 8084
+
+spring:
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+      routes:
+      - id: service-transaction
+        uri: lb://service-transaction
+        predicates:
+        - Path=/transaction/**
+      - id: service-transaction
+        uri: lb://service-transaction
+        predicates:
+        - Path=/type/**
+        
+      - id: service-product
+        uri: lb://service-product
+        predicates:
+        - Path=/account/**
+        
+      - id: service-customer
+        uri: lb://service-customer
+        predicates:
+        - Path=/personalCustomers/**
+      - id: service-customer
+        uri: lb://service-customer
+        predicates:
+        - Path=/bussinessCustomers/**
+
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:8085/eureka/
