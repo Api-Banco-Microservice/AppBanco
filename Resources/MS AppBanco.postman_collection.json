@@ -17,12 +17,12 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:8085/transaction/findAll",
+									"raw": "http://localhost:8083/transaction/findAll",
 									"protocol": "http",
 									"host": [
 										"localhost"
 									],
-									"port": "8085",
+									"port": "8083",
 									"path": [
 										"transaction",
 										"findAll"
@@ -37,12 +37,12 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:8085/transaction/1",
+									"raw": "http://localhost:8083/transaction/1",
 									"protocol": "http",
 									"host": [
 										"localhost"
 									],
-									"port": "8085",
+									"port": "8083",
 									"path": [
 										"transaction",
 										"1"
@@ -58,7 +58,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"number\": \"T-1\",\r\n    \"account\": 1,\r\n    \"type\": {\r\n        \"id\": 1,\r\n        \"description\": \"Pase dinero\"\r\n    }\r\n}",
+									"raw": "{\r\n    \"number\": \"T-5\",\r\n    \"account\": 1,\r\n    \"type\": {\r\n        \"id\": 1,\r\n        \"description\": \"Deposito\"\r\n    }\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -66,12 +66,12 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:8085/transaction/create",
+									"raw": "http://localhost:8083/transaction/create",
 									"protocol": "http",
 									"host": [
 										"localhost"
 									],
-									"port": "8085",
+									"port": "8083",
 									"path": [
 										"transaction",
 										"create"
@@ -87,7 +87,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"number\": \"T-01\",\r\n    \"account\": 1,\r\n    \"type\": {\r\n        \"id\": 1,\r\n        \"description\": \"Pase dinero\"\r\n    },\r\n    \"dateRegister\": \"2022-05-30T00:22:33.256+00:00\"\r\n}",
+									"raw": "{\r\n    \"number\": \"T-05\",\r\n    \"account\": 1,\r\n    \"type\": {\r\n        \"id\": 2,\r\n        \"description\": \"Retiro\"\r\n    },\r\n    \"dateRegister\": \"2022-05-30T00:22:33.256+00:00\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -95,16 +95,16 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:8085/transaction/update/1",
+									"raw": "http://localhost:8083/transaction/update/11",
 									"protocol": "http",
 									"host": [
 										"localhost"
 									],
-									"port": "8085",
+									"port": "8083",
 									"path": [
 										"transaction",
 										"update",
-										"1"
+										"11"
 									]
 								}
 							},
@@ -121,12 +121,12 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:8085/type/findAll",
+									"raw": "http://localhost:8083/type/findAll",
 									"protocol": "http",
 									"host": [
 										"localhost"
 									],
-									"port": "8085",
+									"port": "8083",
 									"path": [
 										"type",
 										"findAll"
@@ -141,12 +141,12 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:8085/type/1",
+									"raw": "http://localhost:8083/type/1",
 									"protocol": "http",
 									"host": [
 										"localhost"
 									],
-									"port": "8085",
+									"port": "8083",
 									"path": [
 										"type",
 										"1"
@@ -156,6 +156,529 @@
 							"response": []
 						}
 					]
+				}
+			]
+		},
+		{
+			"name": "ABServiceGateway",
+			"item": [
+				{
+					"name": "Transaction",
+					"item": [
+						{
+							"name": "List Transaction",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8084/transaction/findAll",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8084",
+									"path": [
+										"transaction",
+										"findAll"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Transaction",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8084/transaction/10",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8084",
+									"path": [
+										"transaction",
+										"10"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create Transaction",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"number\": \"T-1\",\r\n    \"account\": 1,\r\n    \"type\": {\r\n        \"id\": 1,\r\n        \"description\": \"Deposito\"\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8084/transaction/create",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8084",
+									"path": [
+										"transaction",
+										"create"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Transaction",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"number\": \"T-01\",\r\n    \"account\": 1,\r\n    \"type\": {\r\n        \"id\": 2,\r\n        \"description\": \"Retiro\"\r\n    },\r\n    \"dateRegister\": \"2022-05-30T00:22:33.256+00:00\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8084/transaction/update/10",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8084",
+									"path": [
+										"transaction",
+										"update",
+										"10"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Type",
+					"item": [
+						{
+							"name": "List Type",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8084/type/findAll",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8084",
+									"path": [
+										"type",
+										"findAll"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Type",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8084/type/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8084",
+									"path": [
+										"type",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Account",
+					"item": [
+						{
+							"name": "List Account",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8084/account/findAll",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8084",
+									"path": [
+										"account",
+										"findAll"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Account",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8084/account/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8084",
+									"path": [
+										"account",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Find Account",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8084/account/find/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8084",
+									"path": [
+										"account",
+										"find",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create Account",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"nroclient\": \"95847514\",\r\n    \"amount\": 5000.00,\r\n    \"type\": \"Ahorro\",\r\n    \"statedebt\": true,\r\n    \"nrotransactions\": 9,\r\n    \"maintenance\": 2.0,\r\n    \"movementlimit\": 0\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8084/account/create",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8084",
+									"path": [
+										"account",
+										"create"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Account",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"nroclient\": \"95847514\",\r\n    \"amount\": 9500.00,\r\n    \"type\": \"Ahorro\",\r\n    \"statedebt\": true,\r\n    \"nrotransactions\": 15,\r\n    \"maintenance\": 3.0,\r\n    \"movementlimit\": 0\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8084/account/update/11",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8084",
+									"path": [
+										"account",
+										"update",
+										"11"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "ABServiceProduct",
+			"item": [
+				{
+					"name": "Account",
+					"item": [
+						{
+							"name": "List Account",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8082/account/findAll",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8082",
+									"path": [
+										"account",
+										"findAll"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Account",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8082/account/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8082",
+									"path": [
+										"account",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Find Account",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8082/account/find/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8082",
+									"path": [
+										"account",
+										"find",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create Account",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"nroclient\": \"95847514\",\r\n    \"amount\": 5000.00,\r\n    \"type\": \"Ahorro\",\r\n    \"statedebt\": true,\r\n    \"nrotransactions\": 9,\r\n    \"maintenance\": 2.0,\r\n    \"movementlimit\": 0\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8082/account/create",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8082",
+									"path": [
+										"account",
+										"create"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Account",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"nroclient\": \"95847514\",\r\n    \"amount\": 9500.00,\r\n    \"type\": \"Ahorro\",\r\n    \"statedebt\": true,\r\n    \"nrotransactions\": 15,\r\n    \"maintenance\": 3.0,\r\n    \"movementlimit\": 0\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8082/account/update/11",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8082",
+									"path": [
+										"account",
+										"update",
+										"11"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "ABServiceCustomer",
+			"item": [
+				{
+					"name": "Business",
+					"item": [
+						{
+							"name": "List Business",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8081/bussinessCustomers/findAll",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"bussinessCustomers",
+										"findAll"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Business",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8081/bussinessCustomers/view/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"bussinessCustomers",
+										"view",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create Business",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Libre S.A.C\",\r\n    \"address\": \"Trujillo\",\r\n    \"email\": \"libre@gmail.com\",\r\n    \"state\": \"ON\",\r\n    \"type\": \"Debito\",\r\n    \"ruc\": \"859475812548\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8081/bussinessCustomers/create",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"bussinessCustomers",
+										"create"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Business",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": 6,\r\n    \"name\": \"Libre S.A.C\",\r\n    \"address\": \"Arequipa\",\r\n    \"email\": \"libreria@gmail.com\",\r\n    \"state\": \"ON\",\r\n    \"type\": \"Debito\",\r\n    \"ruc\": \"859475812549\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8081/bussinessCustomers/update/6",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"bussinessCustomers",
+										"update",
+										"6"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Personal",
+					"item": []
 				}
 			]
 		}
